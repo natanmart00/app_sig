@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Musical - Dashboard</title>
+    <link href="resources/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body class="bg-body-tertiary">
+
+    <nav class="navbar navbar-expand navbar-dark bg-dark mb-4 shadow">
+        <div class="container">
+            <span class="navbar-brand fw-bold" href="#">Henry Natán Martínez Benítez - MB21148</span>
+        </div>
+    </nav>
+
+    <div class="container mb-5">
+        <header class="mb-5 text-center">
+            <h1 class="display-4 fw-semibold text-body-emphasis">Dashboard de Estadísticas</h1>
+            <p class="lead text-body-secondary">Análisis de datos en tiempo real usando el API de Deezer</p>
+        </header>
+
+        <div class="mb-4 d-flex justify-content-center gap-5">
+            <button type="button" id="boton_generar_pdf" class="btn btn-outline-danger">
+                <span>Generar Reporte PDF</span>
+            </button>
+            <button type="button" id="boton_generar_excel" class="btn btn-outline-success">
+                <span>Generar Reporte Excel</span>
+            </button>
+        </div>
+
+        <div class="row g-4">
+            <!-- Gráfico 1 -->
+            <div class="col-6">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="card-title text-center text-body-secondary mb-4">Top 10 Canciones (Popularidad)</h5>
+                        <div style="position: relative; height: 350px;">
+                            <canvas id="grafico_top_canciones"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Gráfico 2 -->
+            <div class="col-6">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="card-title text-center text-body-secondary mb-4">Top 15 Artistas (Cantidad de Fans)</h5>
+                        <div style="position: relative; height: 350px;">
+                            <canvas id="grafico_top_artistas"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráfico 3 -->
+            <div class="col-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="card-title text-center text-body-secondary mb-4">Contenido (Explícito vs Apto)</h5>
+                        <div style="position: relative; height: 350px;">
+                            <canvas id="grafico_explicito"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráfico 4 -->
+            <div class="col-8">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="card-title text-center text-body-secondary mb-4">Distribución de Géneros Top 10</h5>
+                        <div style="position: relative; height: 350px;">
+                            <canvas id="grafico_generos"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráfico 5 -->
+            <div class="col-6">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="card-title text-center text-body-secondary mb-4">Posición vs Duración (Top 100)</h5>
+                        <div style="position: relative; height: 350px;">
+                            <canvas id="grafico_duracion"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráfico 6 -->
+            <div class="col-6">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="card-title text-center text-body-secondary mb-4">Sencillos vs Álbumes (Top 100)</h5>
+                        <div style="position: relative; height: 350px;">
+                            <canvas id="grafico_sencillo_album"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráfico 8 -->
+            <div class="col-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="card-title text-center text-body-secondary mb-4">Artistas (Masculinos vs Femeninos)</h5>
+                        <div style="position: relative; height: 350px;">
+                            <canvas id="grafico_genero_artistas"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gráfico 9 -->
+            <div class="col-8">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body">
+                        <h5 class="card-title text-center text-body-secondary mb-4">Top 10 Podcasts Más Escuchados</h5>
+                        <div style="position: relative; height: 350px;">
+                            <canvas id="grafico_top_podcasts"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="resources/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="resources/jquery/jquery.min.js"></script>
+    <script src="resources/chartjs/chart.js"></script>
+    <script src="graficos.js"></script>
+</body>
+</html>
